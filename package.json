@@ -1,7 +1,7 @@
 {
   "name": "hubot-nyaa-net",
   "description": "nyaa.net 搜索机器人脚本",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
     "name": "神楽坂喵",
     "email": "yuronglong1996@gmail.com"

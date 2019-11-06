@@ -17,10 +17,10 @@ module.exports = (robot) ->
 
   robot.hear /nyaa search (.*) (.*) (.*)/, (res) ->
     robot.http("https://nyaa.net/api/search?q=#{res.match[1]}&page=#{res.match[2]}&limit=#{res.match[3]}&sort=3&order=false")
-      .get() (err, res, body) ->
+      .get() (err, resp, body) ->
         if err
           res.send "got problem when request search: #{err}"
-          robot.emit 'error', err, res
+          robot.emit 'error', err, resp
           return
         data = null
         try
