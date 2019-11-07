@@ -30,7 +30,7 @@ module.exports = (robot) ->
           res.send "got JSON parse error #{error}"
           return
         res.send "展示搜索到的`#{data.queryRecordCount}`个结果,共有`#{data.totalRecordCount}`个结果。"
-        res.send "*名称* : `#{torrent.name}` \n*描述* : `#{torrent.description}` \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*下载* : <#{torrent.magnet} |磁力链接> <#{torrent.torrent} |种子文件>" for torrent in data.torrents
+        res.send "*名称* : `#{torrent.name}` \n*描述* : #{torrent.description} \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*磁链* : `#{torrent.magnet}` \n*种子* : #{torrent.torrent}" for torrent in data.torrents
         return
 
 
@@ -48,7 +48,7 @@ module.exports = (robot) ->
           res.send "got JSON parse error #{error}"
           return
         res.send "展示搜索到的`#{data.queryRecordCount}`个结果,共有`#{data.totalRecordCount}`个结果。"
-        res.send "*名称* : `#{torrent.name}` \n*描述* : `#{torrent.description}` \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*下载* : <#{torrent.magnet} |磁力链接> <#{torrent.torrent} |种子文件>" for torrent in data.torrents
+        res.send "*名称* : `#{torrent.name}` \n*描述* : #{torrent.description} \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*磁链* : `#{torrent.magnet}` \n*种子* : #{torrent.torrent}" for torrent in data.torrents
         return
 
 `
