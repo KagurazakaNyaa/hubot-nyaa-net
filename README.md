@@ -22,7 +22,8 @@ Then add **hubot-nyaa-net** to your `external-scripts.json`:
 
 ```
 user1>> nyaa search <name> <page> <size>
-hubot>> name:...
+hubot>> 展示搜索到的 xx 个结果,共有 xxx 个结果。
+hubot>> 名称:xxx......
 ```
 
 ## NPM Module

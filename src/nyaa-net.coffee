@@ -30,7 +30,7 @@ module.exports = (robot) ->
           res.send "got JSON parse error #{error}"
           return
         res.send "展示搜索到的`#{data.queryRecordCount}`个结果,共有`#{data.totalRecordCount}`个结果。"
-        res.send "名称:`#{torrent.name}`\n描述:`#{torrent.description}`\n文件大小:`#{humanFileSize(torrent.filesize)}`\n上传日期:`#{torrent.date}`\n磁力链接:`#{torrent.magnet}`\n种子文件:`#{torrent.torrent}`" for torrent in data.torrents
+        res.send "*名称* : `#{torrent.name}` \n*描述* : `#{torrent.description}` \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*下载* : <#{torrent.magnet} |磁力链接> <#{torrent.torrent} |种子文件>" for torrent in data.torrents
         return
 
 
@@ -48,7 +48,7 @@ module.exports = (robot) ->
           res.send "got JSON parse error #{error}"
           return
         res.send "展示搜索到的`#{data.queryRecordCount}`个结果,共有`#{data.totalRecordCount}`个结果。"
-        res.send "名称:`#{torrent.name}`\n描述:`#{torrent.description}`\n文件大小:`#{humanFileSize(torrent.filesize)}`\n上传日期:`#{torrent.date}`\n磁力链接:`#{torrent.magnet}`\n种子文件:`#{torrent.torrent}`" for torrent in data.torrents
+        res.send "*名称* : `#{torrent.name}` \n*描述* : `#{torrent.description}` \n*文件大小* : `#{humanFileSize(torrent.filesize)}` \n*上传日期* : `#{torrent.date}` \n*下载* : <#{torrent.magnet} |磁力链接> <#{torrent.torrent} |种子文件>" for torrent in data.torrents
         return
 
 `
@@ -63,6 +63,6 @@ function humanFileSize(bytes) {
         bytes /= thresh;
         ++u;
     } while(Math.abs(bytes) >= thresh && u < units.length - 1);
-    return bytes.toFixed(4)+' '+units[u];
+    return bytes.toFixed(3)+' '+units[u];
 }
 `
